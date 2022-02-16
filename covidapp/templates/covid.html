@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Weather {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mt-5">Ковид</h1>
+    <form action="/search/" method="POST" class="input-group mb-3 mt-5">
+        {% csrf_token %}
+        <input type="text" class="form-control" placeholder="Называния страна" aria-label="Recipient's username" aria-describedby="button-addon2"  name="country">
+        <button class="btn btn-outline-secondary" type="sumbit" id="button-addon2">Поиск</button>
+    </form>
+    <!-- {{data}} -->
+    <!-- {{finish}} -->
+    <div style="margin-left: 350px;">
+    <h6>Подвержденный: {{confirmed}}</h6>
+    <h6>Восстановлено:  {{recovered}}</h6>
+    <h6>Умерли:  {{deaths}}</h6>
+    <h6>Страна: {{count}}</h6>
+    <h6>Населения: {{population}}</h6>
+    <h3>Топ 10: {{finish}}</h3>
+    <!-- {{covid1}} -->
+    </div>
+</div>
+
+
+
+{% endblock %}
