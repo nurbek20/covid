@@ -33,10 +33,12 @@ def search(request):
         # print(index)
         print(chekcountry[index])
         for i in range(10):
+            lst=[]
             a=max(cheknumber[:-1])
             index = cheknumber.index(a)
             finish[chekcountry[index]]=cheknumber[index]
             chekcountry.pop(index)
             cheknumber.pop(index)
-            
-        return render(request,  'covid.html', {'data' :data, 'covid' :covid, 'recovered' :recovered, 'deaths' :deaths, 'count' :count, 'population' :population, 'confirmed' :confirmed, 'finish' :finish})
+            lst.append(finish)
+            print(type(finish))
+        return render(request,  'covid.html', {'data' :data, 'covid' :covid, 'recovered' :recovered, 'deaths' :deaths, 'count' :count, 'population' :population, 'confirmed' :confirmed, 'finish' :finish, 'lst' :lst})
