@@ -41,4 +41,5 @@ def search(request):
             cheknumber.pop(index)
             lst.append(finish)
             print(type(finish))
+        print(type(lst))
         return render(request,  'covid.html', {'data' :data, 'covid' :covid, 'recovered' :recovered, 'deaths' :deaths, 'count' :count, 'population' :population, 'confirmed' :confirmed, 'finish' :finish, 'lst' :lst})

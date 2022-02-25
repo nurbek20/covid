@@ -19,8 +19,14 @@
     <h6>Страна: {{count}}</h6>
     <h6>Населения: {{population}}</h6>
     <!-- <h3>Топ 10: {{finish}}</h3> -->
-    <h3>Топ 10: {{lst}}</h3>
 
+    <pre>Топ 10: 
+        {% for i in lst %}
+        {% for y, e in i.items %}
+        Страна: {{y}} - Подвержденный: {{e}}
+        {% endfor %}
+        {% endfor %}
+    </pre>
     <!-- {{covid1}} -->
     </div>
 </div>
